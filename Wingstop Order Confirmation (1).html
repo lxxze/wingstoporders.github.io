@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wingstop Order Confirmation</title>
+  <script src="https://unpkg.com/lucide@0.263.1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .lucide {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2;
+    }
+    .progress-line {
+      position: absolute;
+      left: 12px;
+      top: 24px;
+      width: 2px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .progress-line.completed {
+      background: white;
+    }
+    .status-circle {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 sticky top-0 z-10">
+      <i data-lucide="menu" class="w-6 h-6 text-gray-800"></i>
+      <img 
+        src="https://media-hosting.imagekit.io//1a344214285a4aa1/wingstop-logo-green-340.png?Expires=1735668505&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=q81ukudtRJ~xu4AjLDy7gCjWYYioIePpisCf21BvG-fXBpx1QBJ5c9qZ-RbfjGBTLyvlWR7DwkiVHEfKV9c-eameVmTIk2lP1NNDHfgbTdDHmYM480yuJ~uHApk1WUYoFb19pnAqewi4~OU1Ik5AEbXHeR0DXzkMZDblovGIAfM~aUyiPMorJruhWJukSxhGEQFfieEQMIW9cGABCjzZczFKgaHzILkuA2xhX1pBLKHMLv1m7UhowY0pyf8JgmdA9HzcPcYL3EULJWVXG-Urw5e1lZemBNuyzpKA6UPKpThiHFZBTDyTiOMTWdXTJXwrUOiQgcgKflo8Gv7c9P~-Xg__"
+        alt="Wingstop"
+        class="h-7"
+      />
+      <div class="flex gap-4 items-center">
+        <img 
+          src="https://media-hosting.imagekit.io//30254bd6cb384aa6/Screenshot_2024-12-29_130928-removebg-preview.png?Expires=1735668842&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=n99iop5wh7OK4I1zi8Qmi8E1hKFEGauRrlfwndafPLbykTnmP6Vo1x7E--DXdv6lAxClp5~fFG-kpMhTnurCczWm2W5M2EuNq9CgGl46nDkAGtKZTF-MuY3shP-jOAMrFlKRueO4jDr4Cb7KMwacUuqS9V7gpp1B-YQSdamUq5suRnfUSy7MCKFYJ8m8VxsX38yBZQRuKYNtKYmzH-KaXxUH5Dt-Umvs3rR6o-onFDUObF1woaB06N1wRb8LFYCeiKaehGLE4FB7ID4DvYm84BSlMrw5Mmv7tC~OxTk4eZkvFeK~jfnUgzESwzPSfUNeKRHic29lc413S8ohvP4Jow__"
+          alt="Location"
+          class="w-12 h-12"
+        />
+        <div class="relative">
+          <i data-lucide="shopping-bag" class="w-6 h-6 text-gray-800"></i>
+          <div class="absolute -top-1 -right-1 w-4 h-4 bg-[#006B41] rounded-full flex items-center justify-center">
+            <span class="text-white text-xs">2</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bg-[#006B41] text-white min-h-[calc(100vh-56px)]">
+      <div class="p-6">
+        <h1 class="text-[2.5rem] font-bold mb-6">
+          THANKS AT!
+        </h1>
+
+        <div class="space-y-6">
+          <div>
+            <div class="text-sm font-medium uppercase tracking-wide opacity-90">
+              Delivery in about
+            </div>
+            <div class="text-[2rem] font-bold my-1">
+              44 - 61 MINUTES
+            </div>
+            <div class="text-sm flex items-center gap-2 opacity-90">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              2:20 PM - 2:37 PM
+            </div>
+          </div>
+
+          <p class="text-sm pb-6 border-b border-white/20">
+            Your order has been sent and you should receive an email confirmation shortly.
+          </p>
+
+          <!-- Order Status Timeline -->
+          <div class="space-y-6 relative">
+            <!-- Order Placed -->
+            <div class="relative">
+              <div class="flex items-center gap-3 mb-3 status-circle">
+                <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                  <i data-lucide="check" class="w-3 h-3 text-[#006B41] stroke-[3]"></i>
+                </div>
+                <span class="font-bold text-sm tracking-wide">ORDER PLACED</span>
+              </div>
+              <div class="progress-line completed"></div>
+              <div class="text-sm space-y-1 opacity-90 ml-8">
+                <p>Ordered today at 1:36 PM</p>
+                <p>Order #: 9272009987</p>
+              </div>
+            </div>
+
+            <!-- Preparing -->
+            <div class="relative">
+              <div class="flex items-center gap-3 mb-3 status-circle">
+                <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                </div>
+                <span class="font-bold text-sm tracking-wide opacity-60">PREPARING</span>
+              </div>
+              <div class="progress-line"></div>
+            </div>
+
+            <!-- On the Way -->
+            <div class="relative">
+              <div class="flex items-center gap-3 mb-3 status-circle">
+                <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                </div>
+                <span class="font-bold text-sm tracking-wide opacity-60">ON THE WAY</span>
+              </div>
+              <div class="progress-line"></div>
+            </div>
+
+            <!-- Delivered -->
+            <div class="relative">
+              <div class="flex items-center gap-3 mb-3 status-circle">
+                <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                </div>
+                <span class="font-bold text-sm tracking-wide opacity-60">DELIVERED</span>
+              </div>
+            </div>
+
+            <!-- Order Details Button -->
+            <button class="w-full bg-white/10 rounded-lg p-4 flex items-center justify-between hover:bg-white/15 transition-colors mt-8">
+              <div>
+                <h3 class="font-bold text-sm mb-1">ORDER DETAILS</h3>
+                <p class="text-sm opacity-90">40 PC BONELESS GROUP PACK • $51.69</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 opacity-80"></i>
+            </button>
+
+            <!-- Delivery Address -->
+            <div class="space-y-2">
+              <h3 class="font-bold text-sm">DELIVERY ADDRESS</h3>
+              <p class="text-sm opacity-90 leading-relaxed">
+                12034 East Marsham Circle
+              </p>
+            </div>
+
+            <!-- Payment Info -->
+            <div class="space-y-3">
+              <h3 class="font-bold text-sm">PAYMENT</h3>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                  <img 
+                    src="https://media-hosting.imagekit.io//6f5c0c7b9c1d4aa1/visa-logo.png?Expires=1735668842&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=abcdef"
+                    alt="Visa"
+                    class="w-6"
+                  />
+                </div>
+                <div class="text-sm opacity-90">
+                  <p>Visa ending in 4242</p>
+                  <p>$61.36</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="fixed bottom-0 left-0 right-0 bg-[#005434] p-4">
+        <button class="w-full bg-white text-[#006B41] rounded-lg py-3 font-bold text-sm hover:bg-gray-100 transition-colors">
+          TRACK ORDER
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
